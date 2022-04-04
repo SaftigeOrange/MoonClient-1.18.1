@@ -1,0 +1,147 @@
+---- Minecraft Crash Report ----
+// You're mean.
+
+Time: 03.04.22, 01:09
+Description: mouseClicked event handler
+
+java.lang.NullPointerException: Cannot invoke "net.minecraft.client.Minecraft.getCurrentServer()" because "de.orange.client.Client.minecraft" is null
+	at net.minecraft.client.gui.screens.ConnectScreen.startConnecting(ConnectScreen.java:66)
+	at net.minecraft.client.gui.screens.multiplayer.JoinMultiplayerScreen.join(JoinMultiplayerScreen.java:297)
+	at net.minecraft.client.gui.screens.multiplayer.JoinMultiplayerScreen.joinSelectedServer(JoinMultiplayerScreen.java:291)
+	at net.minecraft.client.gui.screens.multiplayer.JoinMultiplayerScreen.lambda$init$0(JoinMultiplayerScreen.java:79)
+	at net.minecraft.client.gui.components.Button.onPress(Button.java:31)
+	at net.minecraft.client.gui.components.AbstractButton.onClick(AbstractButton.java:17)
+	at net.minecraft.client.gui.components.AbstractWidget.mouseClicked(AbstractWidget.java:130)
+	at net.minecraft.client.gui.components.events.ContainerEventHandler.mouseClicked(ContainerEventHandler.java:31)
+	at net.minecraft.client.MouseHandler.lambda$onPress$0(MouseHandler.java:107)
+	at net.minecraft.client.gui.screens.Screen.wrapScreenError(Screen.java:582)
+	at net.minecraft.client.MouseHandler.onPress(MouseHandler.java:105)
+	at net.minecraft.client.MouseHandler.lambda$setup$4(MouseHandler.java:223)
+	at net.minecraft.util.thread.BlockableEventLoop.execute(BlockableEventLoop.java:118)
+	at net.minecraft.client.MouseHandler.lambda$setup$5(MouseHandler.java:222)
+	at org.lwjgl.glfw.GLFWMouseButtonCallbackI.callback(GLFWMouseButtonCallbackI.java:36)
+	at org.lwjgl.system.JNI.invokeV(Native Method)
+	at org.lwjgl.glfw.GLFW.glfwPollEvents(GLFW.java:3101)
+	at com.mojang.blaze3d.systems.RenderSystem.flipFrame(RenderSystem.java:193)
+	at com.mojang.blaze3d.platform.Window.updateDisplay(Window.java:461)
+	at net.minecraft.client.Minecraft.runTick(Minecraft.java:1218)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:712)
+	at net.minecraft.client.main.Main.main(Main.java:239)
+	at mcp.client.Start.main(Start.java:17)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Render thread
+Stacktrace:
+	at net.minecraft.client.gui.screens.ConnectScreen.startConnecting(ConnectScreen.java:66)
+	at net.minecraft.client.gui.screens.multiplayer.JoinMultiplayerScreen.join(JoinMultiplayerScreen.java:297)
+	at net.minecraft.client.gui.screens.multiplayer.JoinMultiplayerScreen.joinSelectedServer(JoinMultiplayerScreen.java:291)
+	at net.minecraft.client.gui.screens.multiplayer.JoinMultiplayerScreen.lambda$init$0(JoinMultiplayerScreen.java:79)
+	at net.minecraft.client.gui.components.Button.onPress(Button.java:31)
+	at net.minecraft.client.gui.components.AbstractButton.onClick(AbstractButton.java:17)
+	at net.minecraft.client.gui.components.AbstractWidget.mouseClicked(AbstractWidget.java:130)
+	at net.minecraft.client.gui.components.events.ContainerEventHandler.mouseClicked(ContainerEventHandler.java:31)
+	at net.minecraft.client.MouseHandler.lambda$onPress$0(MouseHandler.java:107)
+	at net.minecraft.client.gui.screens.Screen.wrapScreenError(Screen.java:582)
+	at net.minecraft.client.MouseHandler.onPress(MouseHandler.java:105)
+	at net.minecraft.client.MouseHandler.lambda$setup$4(MouseHandler.java:223)
+	at net.minecraft.util.thread.BlockableEventLoop.execute(BlockableEventLoop.java:118)
+	at net.minecraft.client.MouseHandler.lambda$setup$5(MouseHandler.java:222)
+	at org.lwjgl.glfw.GLFWMouseButtonCallbackI.callback(GLFWMouseButtonCallbackI.java:36)
+	at org.lwjgl.system.JNI.invokeV(Native Method)
+	at org.lwjgl.glfw.GLFW.glfwPollEvents(GLFW.java:3101)
+	at com.mojang.blaze3d.systems.RenderSystem.flipFrame(RenderSystem.java:193)
+
+-- Affected screen --
+Details:
+	Screen name: net.minecraft.client.gui.screens.multiplayer.JoinMultiplayerScreen
+Stacktrace:
+	at net.minecraft.client.gui.screens.Screen.wrapScreenError(Screen.java:582)
+	at net.minecraft.client.MouseHandler.onPress(MouseHandler.java:105)
+	at net.minecraft.client.MouseHandler.lambda$setup$4(MouseHandler.java:223)
+	at net.minecraft.util.thread.BlockableEventLoop.execute(BlockableEventLoop.java:118)
+	at net.minecraft.client.MouseHandler.lambda$setup$5(MouseHandler.java:222)
+	at org.lwjgl.glfw.GLFWMouseButtonCallbackI.callback(GLFWMouseButtonCallbackI.java:36)
+	at org.lwjgl.system.JNI.invokeV(Native Method)
+	at org.lwjgl.glfw.GLFW.glfwPollEvents(GLFW.java:3101)
+	at com.mojang.blaze3d.systems.RenderSystem.flipFrame(RenderSystem.java:193)
+	at com.mojang.blaze3d.platform.Window.updateDisplay(Window.java:461)
+	at net.minecraft.client.Minecraft.runTick(Minecraft.java:1218)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:712)
+	at net.minecraft.client.main.Main.main(Main.java:239)
+	at mcp.client.Start.main(Start.java:17)
+
+-- Last reload --
+Details:
+	Reload number: 1
+	Reload reason: initial
+	Finished: Yes
+	Packs: Default
+Stacktrace:
+	at net.minecraft.client.ResourceLoadStateTracker.fillCrashReport(ResourceLoadStateTracker.java:58)
+	at net.minecraft.client.Minecraft.fillReport(Minecraft.java:2816)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:734)
+	at net.minecraft.client.main.Main.main(Main.java:239)
+	at mcp.client.Start.main(Start.java:17)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.18.1
+	Minecraft Version ID: 1.18.1
+	Operating System: Windows 10 (amd64) version 10.0
+	Java Version: 17.0.2, Oracle Corporation
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode, sharing), Oracle Corporation
+	Memory: 1625940648 bytes (1550 MiB) / 3095396352 bytes (2952 MiB) up to 4282384384 bytes (4084 MiB)
+	CPUs: 12
+	Processor Vendor: AuthenticAMD
+	Processor Name: AMD Ryzen 5 2600X Six-Core Processor           
+	Identifier: AuthenticAMD Family 23 Model 8 Stepping 2
+	Microarchitecture: Zen+
+	Frequency (GHz): 3,59
+	Number of physical packages: 1
+	Number of physical CPUs: 6
+	Number of logical CPUs: 12
+	Graphics card #0 name: NVIDIA GeForce GTX 760
+	Graphics card #0 vendor: NVIDIA (0x10de)
+	Graphics card #0 VRAM (MB): 2048,00
+	Graphics card #0 deviceId: 0x1187
+	Graphics card #0 versionInfo: DriverVersion=30.0.14.7212
+	Memory slot #0 capacity (MB): 8192,00
+	Memory slot #0 clockSpeed (GHz): 2,13
+	Memory slot #0 type: DDR4
+	Memory slot #1 capacity (MB): 8192,00
+	Memory slot #1 clockSpeed (GHz): 2,13
+	Memory slot #1 type: DDR4
+	Virtual memory max (MB): 25038,94
+	Virtual memory used (MB): 19683,15
+	Swap memory total (MB): 8704,00
+	Swap memory used (MB): 1189,99
+	JVM Flags: 0 total; 
+	Launched Version: mcp
+	Backend library: LWJGL version 3.2.2 build 10
+	Backend API: NVIDIA GeForce GTX 760/PCIe/SSE2 GL version 3.2.0 NVIDIA 472.12, NVIDIA Corporation
+	Window size: 1920x1017
+	GL Caps: Using framebuffer using OpenGL 3.2
+	GL debug messages: 
+	Using VBOs: Yes
+	Is Modded: Very likely; Client jar signature invalidated
+	Type: Client (map_client.txt)
+	Graphics mode: fancy
+	Resource Packs: 
+	Current Language: English (US)
+	CPU: 12x AMD Ryzen 5 2600X Six-Core Processor 
+	OptiFine Version: OptiFine_1.18.1_HD_U_H5_pre4
+	OptiFine Build: null
+	Render Distance Chunks: 8
+	Mipmaps: 4
+	Anisotropic Filtering: 1
+	Antialiasing: 0
+	Multitexture: false
+	Shaders: null
+	OpenGlVersion: 3.2.0 NVIDIA 472.12
+	OpenGlRenderer: NVIDIA GeForce GTX 760/PCIe/SSE2
+	OpenGlVendor: NVIDIA Corporation
+	CpuCount: 12
